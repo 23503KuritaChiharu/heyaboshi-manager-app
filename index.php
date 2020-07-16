@@ -19,7 +19,7 @@
     </div>
 
     <div class="alert alert-secondary" role="alert">
-        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        A simple secondary alert with <a href="#" class="alert-link">aaaa</a>. Give it a click if you like.
     </div>
     
     <div class="alert alert-secondary" role="alert">

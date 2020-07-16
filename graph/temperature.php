@@ -36,7 +36,7 @@
                 data = new google.visualization.arrayToDataTable([
                     ['時間', '温度'],
                     ['0', 0],
-                    ['1', 30],
+                    ['1', 35],
                     ['2', 28],
                     ['3', 27],
                     ['4', 23],
