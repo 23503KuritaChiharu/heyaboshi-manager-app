@@ -1,8 +1,8 @@
 <?php
 // defineの値は環境によって変えてください。
-define('HOSTNAME', '127.0.0.1');
+define('HOSTNAME', 'localhost');
 define('DATABASE', 'library_db');
-define('USERNAME', 'root');
+define('USERNAME', 'azure');
 define('PASSWORD', ' ');
 
 try {
