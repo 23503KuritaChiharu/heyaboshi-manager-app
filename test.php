@@ -3,7 +3,7 @@
 define('HOSTNAME', '57332');
 define('DATABASE', 'library_db');
 define('USERNAME', 'root');
-define('PASSWORD', '');
+define('PASSWORD', ' ');
 
 try {
   /// DB接続を試みる
