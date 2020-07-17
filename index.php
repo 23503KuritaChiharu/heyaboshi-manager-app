@@ -18,16 +18,12 @@
         <h3>問題点</h3>
     </div>
 
-    <div class="alert alert-secondary" role="alert">
-        A simple secondary alert with <a href="#" class="alert-link">aaaa</a>. Give it a click if you like.
+    <div class="alert alert-secondary text-center" role="alert">
+        <a href="#" class="alert-link">菌が増殖しやすくなっています</a>
     </div>
     
-    <div class="alert alert-secondary" role="alert">
-        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-    </div>
-
-        <div class="alert alert-secondary" role="alert">
-        A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    <div class="alert alert-secondary text-center" role="alert">
+        <a href="#" class="alert-link">湿度が高くなっています</a>
     </div>
 
     <div class="text-center list-group">
