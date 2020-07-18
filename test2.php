@@ -1,21 +1,14 @@
 <?php
-include 'db_config.php'
 
-$products = array();
+$host = '127.0.0.1:57332'; //127.0.0.1:[ポート番号]でも良い
+$dbname = 'library_db';
+$dbuser = 'root';
+$dbpassword = ' ';
 
-try {
- 
-        // PDOインスタンスを生成
-        $db = new PDO(PDO_DSN, DB_USERNAME, DB_PASSWORD);
- 
-// エラー（例外）が発生した時の処理を記述
-} catch (PDOException $e) {
- 
-  // エラーメッセージを表示させる
-  echo 'データベースにアクセスできません！' . $e->getMessage();
- 
-  // 強制終了
-  exit;
- 
+try{
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8","$dbuser","$dbpassword");
+    echo "SUCCESS";
+}catch(PDOException $e){
+   var_dump($e -> getMessage());
+    die();
 }
-?>

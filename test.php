@@ -1,6 +1,6 @@
 <?php
 // defineの値は環境によって変えてください。
-define('HOSTNAME', 'localhost');
+define('HOSTNAME', '127.0.0.1:57332');
 define('DATABASE', 'sentakumono');
 define('USERNAME', 'root');
 define('PASSWORD', ' ');
