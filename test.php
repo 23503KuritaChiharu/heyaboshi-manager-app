@@ -1,8 +1,8 @@
 <?php
 // defineの値は環境によって変えてください。
 define('HOSTNAME', 'RD0004FFD12EB6');
-define('DATABASE', 'library_db');
-define('USERNAME', 'azure');
+define('DATABASE', 'sentakumono');
+define('USERNAME', 'root');
 define('PASSWORD', ' ');
 
 try {
