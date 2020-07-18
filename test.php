@@ -2,7 +2,7 @@
 // defineの値は環境によって変えてください。
 define('HOSTNAME', '127.0.0.1:57332');
 define('DATABASE', 'sentakumono');
-define('USERNAME', 'azure');
+define('USERNAME', 'root');
 define('PASSWORD', ' ');
 
 try {

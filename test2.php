@@ -1,14 +1,14 @@
 <?php
+$servername = "RD0004FFD12EB6";
+$username = "root";
+$password = " ";
 
-$host = '127.0.0.1:57332'; //127.0.0.1:[ポート番号]でも良い
-$dbname = 'library_db';
-$dbuser = 'root';
-$dbpassword = ' ';
+// Create connection
+$conn = new mysqli($servername, $username, $password);
 
-try{
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8","$dbuser","$dbpassword");
-    echo "SUCCESS";
-}catch(PDOException $e){
-   var_dump($e -> getMessage());
-    die();
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully";
+?>
