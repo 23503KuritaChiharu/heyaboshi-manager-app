@@ -1,5 +1,5 @@
 <?php
-$servername = "RD0004FFD12EB6:57332";
+$servername = "RD0004FFD12EB6-5733";
 $username = "root";
 $password = " ";
 
