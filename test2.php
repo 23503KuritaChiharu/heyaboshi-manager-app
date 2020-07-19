@@ -11,7 +11,7 @@
 
 
      // 商品一覧を取得
-     $stmt = $db->query("SELECT * FROM sentakumono");
+     $stmt = $db->query("SELECT * FROM result");
      $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
      $db = null;
