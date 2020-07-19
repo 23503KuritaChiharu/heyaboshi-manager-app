@@ -1,7 +1,7 @@
 <?php
-  $connectstr_dbhost = '';
+  $connectstr_dbhost = 'RD0004FFD12EB6-57332';
   $connectstr_dbname = '';
-  $connectstr_dbusername = '';
+  $connectstr_dbusername = 'root';
   $connectstr_dbpassword = '';
 
   foreach ($_SERVER as $key => $value) {
