@@ -11,7 +11,7 @@
 
 
      // 商品一覧を取得
-     $stmt = $db->query("SELECT * FROM products WHERE stock_quantity > 0 ORDER BY unit_price");
+     $stmt = $db->query("SELECT * FROM sentakumono");
      $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
      $db = null;
