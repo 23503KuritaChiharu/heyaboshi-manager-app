@@ -15,7 +15,7 @@
     $connectstr_dbpassword = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
   }
 
-  define('DB_DATABASE', 'sample_db');
+  define('DB_DATABASE', 'sentakumono');
   define('DB_USERNAME', $connectstr_dbusername);
   define('DB_PASSWORD', $connectstr_dbpassword);
   define('PDO_DSN', 'mysql:host='.$connectstr_dbhost.';dbname='. DB_DATABASE . ';charset=utf8;');
