@@ -12,6 +12,10 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+　<!-- CSS -->
+　<link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
+
 </head>
 <body>
 <main class="p-3">
@@ -31,13 +35,19 @@
   <!-- 写真部分 -->
   <div class="tab-content">
     <div id="photo1" class="tab-pane active">
-      <img src="images/photo1.jpg" class="img-fluid" alt=""/>
+      <?php
+        include __DIR__. '/graph/ondo.php';
+      ?>
     </div>
     <div id="photo2" class="tab-pane">
-      <img src="images/photo2.jpg" class="img-fluid" alt=""/>
+      <?php
+        // include __DIR__. '/graph/situdo.php';
+      ?>
     </div>
     <div id="photo3" class="tab-pane">
-      <img src="images/photo3.jpg" class="img-fluid" alt=""/>
+      <?php
+        // include __DIR__. '/graph/water.php';
+      ?>
     </div>
 
   </div>
