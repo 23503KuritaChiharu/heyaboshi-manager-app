@@ -1,47 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <title>部屋干しマネージャー</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
-    
-    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
-  </head>
-
+<head>
+  <meta charset="utf-8"/>
+  <title>部屋干しマネージャー</title>
+  <!-- Bootstrap用CSSの読み込み -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <!-- Bootstrap用JavaScriptの読み込み -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
 <body>
-  
-  <div class="tabs">
-    <input id="all" type="radio" name="tab_item" checked>
-    <label class="tab_item" for="all">温度</label>
-    <input id="programming" type="radio" name="tab_item">
-    <label class="tab_item" for="programming">湿度</label>
-    <input id="design" type="radio" name="tab_item">
-    <label class="tab_item" for="design">含水量</label>
+<main class="p-3">
+  <!-- 4個分のタブ -->
+  <ul class="nav nav-tabs nav-justified justify-content-center">
+    <li class="nav-item">
+      <a href="#photo1" class="nav-link active" data-toggle="tab">温度</a>
+    </li>
+    <li class="nav-item">
+      <a href="#photo2" class="nav-link" data-toggle="tab">湿度</a>
+    </li>
+    <li class="nav-item">
+      <a href="#photo3" class="nav-link" data-toggle="tab">含水量</a>
+    </li>
+  </ul>
 
-    <div class="tab_content" id="all_content">
-      <?php
-        // include 'ondo.php';
-        // include(dirname(__FILE__).'/graph/ondo.php');
-        include __DIR__. '/graph/ondo.php';
-      ?>
+  <!-- 写真部分 -->
+  <div class="tab-content">
+    <div id="photo1" class="tab-pane active">
+      <img src="images/photo1.jpg" class="img-fluid" alt=""/>
     </div>
-    <div class="tab_content" id="programming_content">
-      <?php
-        // include '/graph/situdo.php';
-        // include __DIR__. '/graph/situdo.php';
-      ?>
+    <div id="photo2" class="tab-pane">
+      <img src="images/photo2.jpg" class="img-fluid" alt=""/>
     </div>
-    <div class="tab_content" id="design_content">
-      <?php
-        // include __DIR__. '/graph/water.php';
-      ?>
+    <div id="photo3" class="tab-pane">
+      <img src="images/photo3.jpg" class="img-fluid" alt=""/>
     </div>
+
   </div>
-  </body>
-
-  </html>
+</main>
+</body>
+</html>
