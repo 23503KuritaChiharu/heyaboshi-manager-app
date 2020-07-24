@@ -26,7 +26,7 @@
         <a href="#" class="alert-link">湿度が高くなっています</a>
     </div>
 
-    <div class="text-center list-group">
+    <div id="graph-btn" class="text-center list-group">
         <a href="graph_page.php" class="list-group-item list-group-item-action">グラフを見る &raquo;</a>
     </div>
       
