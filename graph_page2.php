@@ -16,8 +16,16 @@
 　<!-- CSS -->
 　<link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
 
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body>
+  <div>
+    <a href="index.php"><h5 class="mt-2 ml-2"><i class="material-icons" style="vertical-align: middle">
+keyboard_arrow_left
+</i> <span>TOP</span></h5></a>
+  </div>
 <main class="p-3">
   <!-- 4個分のタブ -->
   <ul class="nav nav-tabs nav-justified justify-content-center">
@@ -32,7 +40,7 @@
     </li>
   </ul>
 
-  <!-- 写真部分 -->
+  <!-- グラフ部分 -->
   <div class="tab-content">
     <div id="ondo" class="tab-pane active">
       <?php
@@ -41,12 +49,12 @@
     </div>
     <div id="situdo" class="tab-pane">
       <?php
-        include __DIR__. '/graph/situdo.php';
+        // include __DIR__. '/graph/situdo.php';
       ?>
     </div>
     <div id="water" class="tab-pane">
       <?php
-        include __DIR__. '/graph/water.php';
+        // include __DIR__. '/graph/water.php';
       ?>
     </div>
 

@@ -40,7 +40,7 @@ keyboard_arrow_left
     </li>
   </ul>
 
-  <!-- 写真部分 -->
+  <!-- グラフ部分 -->
   <div class="tab-content">
     <div id="ondo" class="tab-pane active">
       <?php

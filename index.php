@@ -19,7 +19,7 @@
     </div>
 
     <div class="alert alert-secondary text-center" role="alert">
-        <a href="#" class="alert-link">菌が増殖しやすくなっています</a>
+        <a href="advice.php" class="alert-link">菌が増殖しやすくなっています</a>
     </div>
     
     <div class="alert alert-secondary text-center" role="alert">
