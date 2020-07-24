@@ -27,7 +27,7 @@
     </div>
 
     <div class="text-center list-group">
-        <a href="index.php" class="list-group-item list-group-item-action">グラフを見る &raquo;</a>
+        <a href="graph_page.php" class="list-group-item list-group-item-action">グラフを見る &raquo;</a>
     </div>
       
   </body>
