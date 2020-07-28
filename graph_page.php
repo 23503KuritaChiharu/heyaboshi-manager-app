@@ -49,12 +49,12 @@ keyboard_arrow_left
     </div>
     <div id="situdo" class="tab-pane">
       <?php
-        // include __DIR__. '/graph/situdo.php';
+        include __DIR__. '/graph/situdo.php';
       ?>
     </div>
     <div id="water" class="tab-pane">
       <?php
-        // include __DIR__. '/graph/water.php';
+        include __DIR__. '/graph/water.php';
       ?>
     </div>
 

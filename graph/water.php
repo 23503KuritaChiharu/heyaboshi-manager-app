@@ -13,14 +13,14 @@
   </head>
 
 <body>
-    <div id="target"></div>
+    <div id="target3"></div>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
         (function() {
             'use strict';
 
             function drawChart() {
-                var target = document.getElementById('target');
+                var target3 = document.getElementById('target3');
                 var data;
                 var options = {
                     title: '含水量',
@@ -32,7 +32,7 @@
                     pointSize: 10,
                     pointShape: 'square'
                 };
-                var chart = new google.visualization.LineChart(target);
+                var chart = new google.visualization.LineChart(target3);
                 data = new google.visualization.arrayToDataTable([
                     ['時間', '含水量'],
                     ['0', 0],

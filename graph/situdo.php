@@ -13,14 +13,14 @@
   </head>
 
 <body>
-    <div id="target"></div>
+    <div id="target2"></div>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
         (function() {
             'use strict';
 
             function drawChart() {
-                var target = document.getElementById('target');
+                var target2 = document.getElementById('target2');
                 var data;
                 var options = {
                     title: '湿度',
@@ -32,7 +32,7 @@
                     pointSize: 10,
                     pointShape: 'square'
                 };
-                var chart = new google.visualization.LineChart(target);
+                var chart = new google.visualization.LineChart(target2);
                 data = new google.visualization.arrayToDataTable([
                     ['時間', '湿度'],
                     ['0', 0],
