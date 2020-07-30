@@ -24,9 +24,9 @@
               ]);
       
               resizable_options = {
-                title: '会社業績',
-                // width: 500,
-                // height: 300,
+                title: '温度',
+                width: 900,
+                height: 700,
                 hAxis: {title: '時間'},
                 vAxis: {title: '温度'},
                 // curveType: 'function',
@@ -42,6 +42,6 @@
     </script>
   </head>
   <body onresize="resizable_chart.draw(resizable_data, resizable_options);">
-    <div id='gct_resizable_chart' style="width=100%; height=300p"></div>
+    <div id='gct_resizable_chart' style="width=100%; height=350pt"></div>
   </body>
 </html>
