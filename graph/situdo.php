@@ -14,27 +14,27 @@
       google.setOnLoadCallback(
           function () {
               resizable_data = google.visualization.arrayToDataTable([
-                ['時間', '温度'],
+                ['時間', '湿度'],
                 ['0', 0],
-                ['1', 35],
-                ['2', 28],
-                ['3', 27],
-                ['4', 23],
-                ['5', 25],
+                ['1', 50],
+                ['2', 68],
+                ['3', 70],
+                ['4', 50],
+                ['5', 45],
               ]);
       
               resizable_options = {
-                title: '会社業績',
+                title: '湿度',
                 width: 500,
                 height: 300,
                 hAxis: {title: '時間'},
-                vAxis: {title: '温度'},
+                vAxis: {title: '湿度'},
                 // curveType: 'function',
                 pointSize: 10,
                 pointShape: 'square'
               };
       
-              resizable_chart = new google.visualization.LineChart(document.getElementById('gct_resizable_chart'));
+              resizable_chart = new google.visualization.LineChart(document.getElementById('gct_resizable_chart2'));
               resizable_chart.draw(resizable_data, resizable_options);
           }
       );
@@ -42,6 +42,6 @@
     </script>
   </head>
   <body onresize="resizable_chart.draw(resizable_data, resizable_options);">
-    <div id='gct_resizable_chart' style="width=100%; height=350p"></div>
+    <div id='gct_resizable_chart2' style="width=100%; height=350p"></div>
   </body>
 </html>
