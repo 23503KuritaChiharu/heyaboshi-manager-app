@@ -1,49 +1,59 @@
-<html lang='ja'>
+<!doctype html>
+<html lang="ja">
   <head>
+    <title>部屋干しマネージャー</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="#.css?<?php echo date('Ymd-His'); ?>">
-
-    <title>部屋干しマネージャー</title>
-    <meta charaset="utf-8">
     
-    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-
-      google.load("visualization", "1", {packages:["corechart"]});
-      var resizable_chart;
-      var resizable_options;
-      var resizable_data;
-      google.setOnLoadCallback(
-          function () {
-              resizable_data = google.visualization.arrayToDataTable([
-                ['時間', '温度'],
-                ['0', 0],
-                ['1', 35],
-                ['2', 28],
-                ['3', 27],
-                ['4', 23],
-                ['5', 25],
-              ]);
-      
-              resizable_options = {
-                title: '温度',
-                width: 900,
-                height: 700,
-                hAxis: {title: '時間'},
-                vAxis: {title: '温度'},
-                // curveType: 'function',
-                pointSize: 20,
-                pointShape: 'square'
-              };
-      
-              resizable_chart = new google.visualization.LineChart(document.getElementById('gct_resizable_chart'));
-              resizable_chart.draw(resizable_data, resizable_options);
-          }
-      );
-
-    </script>
   </head>
-  <body onresize="resizable_chart.draw(resizable_data, resizable_options);">
-    <div id='gct_resizable_chart' style="width=100%; height=350pt"></div>
-  </body>
+
+<body>
+    <div id="target"></div>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            function drawChart() {
+                var target = document.getElementById('target');
+                var data;
+                var options = {
+                    title: '温度',
+                    width: 500,
+                    height: 300,
+                    hAxis: {title: '時間'},
+                    vAxis: {title: '温度'},
+                    // curveType: 'function',
+                    pointSize: 10,
+                    pointShape: 'square'
+                };
+                var chart = new google.visualization.LineChart(target);
+                data = new google.visualization.arrayToDataTable([
+                    ['時間', '温度'],
+                    ['0', 0],
+                    ['1', 35],
+                    ['2', 28],
+                    ['3', 27],
+                    ['4', 23],
+                    ['5', 25],
+                ]);
+
+                chart.draw(data, options);
+            }
+
+            google.charts.load('current',{packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+        })();
+    </script>
+
+     <!--  グラフの描画エリア -->
+     <body onresize="drawChart()">
+  
+</body>
+
 </html>
