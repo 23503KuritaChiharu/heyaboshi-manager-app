@@ -1,9 +1,11 @@
-<html>
+<html lang='ja'>
   <head>
     <!-- CSS -->
     <link rel="stylesheet" href="#.css?<?php echo date('Ymd-His'); ?>">
 
     <title>部屋干しマネージャー</title>
+    <meta charaset="utf-8">
+    
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
 
