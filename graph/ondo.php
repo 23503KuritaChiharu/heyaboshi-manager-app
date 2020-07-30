@@ -30,7 +30,7 @@
                 hAxis: {title: '時間'},
                 vAxis: {title: '温度'},
                 // curveType: 'function',
-                pointSize: 10,
+                pointSize: 15,
                 pointShape: 'square'
               };
       
