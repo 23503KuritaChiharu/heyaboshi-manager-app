@@ -25,12 +25,12 @@
       
               resizable_options = {
                 title: '湿度',
-                width: 500,
-                height: 300,
+                width: 900,
+                height: 700,
                 hAxis: {title: '時間'},
                 vAxis: {title: '湿度'},
                 // curveType: 'function',
-                pointSize: 10,
+                pointSize: 20,
                 pointShape: 'square'
               };
       

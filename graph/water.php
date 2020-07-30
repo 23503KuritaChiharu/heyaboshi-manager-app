@@ -25,12 +25,12 @@
       
               resizable_options = {
                 title: '含水量',
-                width: 500,
-                height: 300,
+                width: 900,
+                height: 700,
                 hAxis: {title: '時間'},
                 vAxis: {title: '含水量'},
                 // curveType: 'function',
-                pointSize: 10,
+                pointSize: 20,
                 pointShape: 'square'
               };
       
