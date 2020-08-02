@@ -30,9 +30,7 @@
                     vAxis: {title: '湿度'},
                     // curveType: 'function',
                     pointSize: 10,
-                    pointShape: 'square',
-                    chartArea: {width:'90%',height:'80%'}
-
+                    pointShape: 'square'
                 };
                 var chart = new google.visualization.LineChart(target2);
                 data = new google.visualization.arrayToDataTable([
