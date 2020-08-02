@@ -1,62 +1,51 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
 <script type="text/javascript">
+        google.load("visualization", "1.0", {packages:["corechart"]});
       
-  var chart = null;
- 
-  // ライブラリのロード
-  // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
-  google.load('visualization', '1', {'packages':['corechart']});     
-         
-  // グラフを描画する為のコールバック関数を指定
-  google.setOnLoadCallback(drawChart);
- 
-  // グラフの描画   
-  function drawChart() {         
- 
-    // 配列からデータの生成
-    var data = google.visualization.arrayToDataTable([
-      ['時間', '温度'],
-      ['0',  0],
-      ['1',  35], 
-      ['2',  28],
-      ['3',  27],
-      ['4',  23],
-      ['5',  25]                    
-    ]);
- 
-    // オプションの設定
-    var options = {
-      title: '温度',
-      hAxis: {title: '時間'},
-      vAxis: {title: '温度'},
-      pointSize: 10,
-      pointShape: 'square'
-     };
-              
-    // 指定されたIDの要素に折れ線グラフを作成
-    if (!chart)
-     chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-      
-    // グラフの描画
-    chart.draw(data, options);
-  }
-        
-  // onReSizeイベント    
-  window.onresize = function(){
-    
-    drawChart();
-    
-  }
-        
+/**
+         * グラフ表示
+         */
+        function drawChart(array) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'days');
+            data.addColumn('number', '売上高');
+            var count = 0;
+            var alphabet = "BCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+            for(var i = 0; i < alphabet.length; i++) {
+              if(array[alphabet[i]+'1']){
+                count++;
+              }
+            };
+            data.addRows(count);
+            for(var i = 0; i < alphabet.length; i++) {
+              if(array[alphabet[i]+'1']){
+                data.setValue(i, 0, array[alphabet[i]+'1']);
+                data.setValue(i, 1, Number(array[alphabet[i]+'2']));
+              }
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, {
+                width: "100%",
+                height: 300,
+                legend: {position: 'top', maxLines: 2 }, #凡例をグラフ上部、最大２行で表示します。
+                fontSize: 10,#フォントサイズが結構大きめなのでフォントサイズを小さくしておきます。
+                pointSize: 3,#折れ線にポイントがないので、ポイントをプロットさせます。
+                tooltip:{ textStyle: { fontSize: 8} },#ポイントをクリックした際に表示されるツールチップのフォントサイズは更に小さくしておきます。
+                series: {
+                    0:{color: '#003399'},
+                    1:{color: '#cc3333'},
+                },
+                chartArea:{left:70,top:25,width:"100%",height:"70%"}#グラフの描画位置を調整します。左は売上高の数字がくるんで70ピクセル開けて、上部は凡例が来るので25ピクセルあけています。横幅は目一杯使いたいので100％に、何故か高さは100％にすると横軸が表示できなくなるので70％ていどにしておきます。
+            });
+        }
 </script>
 </head>
 <body>
   
   <!--  グラフの描画エリア -->
-  <div id="chart_div" style="width: 100%; height: 350px"></div>
-  
+  <div id="chart_div"></div>
 </body>
 </html>

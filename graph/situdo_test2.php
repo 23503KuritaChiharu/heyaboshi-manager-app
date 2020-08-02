@@ -1,57 +1,57 @@
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-      
-  var chart = null;
- 
-  // ライブラリのロード
-  // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
-  google.load('visualization', '1', {'packages':['corechart']});     
-         
-  // グラフを描画する為のコールバック関数を指定
-  google.setOnLoadCallback(drawChart);
- 
-  // グラフの描画   
-  function drawChart() {         
- 
-    // 配列からデータの生成
-    var data = google.visualization.arrayToDataTable([
-      ['西暦', '兆円'],
-      ['2007年',  0.93],
-      ['2008年',  0.85], 
-      ['2009年',  0.82],
-      ['2010年',  0.91],
-      ['2010年',  1.03]          
-    ]);
- 
-    // オプションの設定
-    var options = {
-      title: 'bbbbbbbb',
-     };
-              
-    // 指定されたIDの要素に折れ線グラフを作成
-    if (!chart)
-     chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
-      
-    // グラフの描画
-    chart.draw(data, options);
-  }
-        
-  // onReSizeイベント    
-  window.onresize = function(){
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>部屋干しマネージャー</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css?<?php echo date('Ymd-His'); ?>">
     
-    drawChart();
-    
-  }
-        
-</script>
-</head>
+  </head>
+
 <body>
-  
-  <!--  グラフの描画エリア -->
-  <div id="chart_div2" style="width: 100%; height: 350px"></div>
-  
+    <div id="target2"></div>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            function drawChart() {
+                var target2 = document.getElementById('target2');
+                var data;
+                var options = {
+                    title: '湿度',
+                    width: 500,
+                    height: 300,
+                    hAxis: {title: '時間'},
+                    vAxis: {title: '湿度'},
+                    // curveType: 'function',
+                    pointSize: 10,
+                    pointShape: 'square',
+                    chartArea: {width:'90%',height:'80%'}
+
+                };
+                var chart = new google.visualization.LineChart(target2);
+                data = new google.visualization.arrayToDataTable([
+                    ['時間', '湿度'],
+                    ['0', 0],
+                    ['1', 50],
+                    ['2', 68],
+                    ['3', 70],
+                    ['4', 50],
+                    ['5', 45],
+                ]);
+
+                chart.draw(data, options);
+            }
+
+            google.charts.load('current',{packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+        })();
+    </script>
 </body>
+
 </html>
