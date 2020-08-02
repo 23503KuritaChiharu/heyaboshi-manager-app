@@ -24,14 +24,14 @@
                 var data;
                 var options = {
                     title: '温度',
-                    width: 500,
+                    width: 400,
                     height: 300,
                     hAxis: {title: '時間'},
                     vAxis: {title: '温度'},
                     // curveType: 'function',
                     pointSize: 10,
                     pointShape: 'square',
-                    chartArea: {width:'90%',height:'80%'}
+                    chartArea: {width:'50%',height:'80%'}
                 };
                 var chart = new google.visualization.LineChart(target);
                 data = new google.visualization.arrayToDataTable([
