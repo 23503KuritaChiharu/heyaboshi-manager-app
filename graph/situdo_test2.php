@@ -33,7 +33,7 @@
               
     // 指定されたIDの要素に折れ線グラフを作成
     if (!chart)
-     chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+     chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
       
     // グラフの描画
     chart.draw(data, options);
@@ -51,7 +51,7 @@
 <body>
   
   <!--  グラフの描画エリア -->
-  <div id="chart_div" style="width: 100%; height: 350px"></div>
+  <div id="chart_div2" style="width: 100%; height: 350px"></div>
   
 </body>
 </html>

@@ -23,9 +23,9 @@
 <body>
 
       <?php
-        include __DIR__. '/graph/ondo_test2.php';
-        include __DIR__. '/graph/situdo_test2.php';
-        // include __DIR__. '/graph/water_test2.php';
+        include __DIR__. '/graph/ondo_test.php';
+        include __DIR__. '/graph/situdo_test.php';
+        include __DIR__. '/graph/water_test.php';
       ?>
     </div>
 
