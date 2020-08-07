@@ -15,19 +15,19 @@
 
   <body>
     <div class="text-center mb-4 mt-4">
-        <h3>問題点</h3>
+      <h3>問題点</h3>
     </div>
 
     <div class="alert alert-secondary text-center" role="alert">
-        <a href="advice.php" class="alert-link">菌が増殖しやすくなっています</a>
+      <a href="advice.php" class="alert-link">菌が増殖しやすくなっています</a>
     </div>
     
     <div class="alert alert-secondary text-center" role="alert">
-        <a href="#" class="alert-link">湿度が高くなっています</a>
+      <a href="#" class="alert-link">湿度が高くなっています</a>
     </div>
 
     <div id="graph-btn" class="text-center list-group">
-        <a href="graph_page.php" class="list-group-item list-group-item-action">グラフを見る &raquo;</a>
+      <a href="graph_page.php" class="list-group-item list-group-item-action">グラフを見る &raquo;</a>
     </div>
       
   </body>

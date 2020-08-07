@@ -15,9 +15,8 @@
 
 　<!-- CSS -->
 　<link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
-
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
 <body>
