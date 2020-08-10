@@ -14,9 +14,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 　<!-- CSS -->
-　<link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
+　<link rel="stylesheet" href="css/advice.css?<?php echo date('Ymd-His'); ?>">
 
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
