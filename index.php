@@ -13,6 +13,10 @@
   </head>
 
   <body>
+    <div class="text-center mb-2 mt-2">
+      <img src="img/logo.png" alt="ロゴ" width="350">
+    </div>
+
     <div class="text-center mb-4 mt-4">
       <h3>問題点</h3>
     </div>

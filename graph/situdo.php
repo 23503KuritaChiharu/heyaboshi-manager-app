@@ -32,7 +32,6 @@
                     pointSize: 10,
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
-
                 };
                 var chart = new google.visualization.LineChart(target2);
                 data = new google.visualization.arrayToDataTable([
@@ -49,9 +48,11 @@
             }
 
             google.charts.load('current',{packages: ['corechart']});
+            google.charts.load("visualization", "1", {packages: ["corechart"]});
             google.charts.setOnLoadCallback(drawChart);
         })();
     </script>
+
 </body>
 
 </html>

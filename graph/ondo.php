@@ -48,7 +48,7 @@
             }
 
             google.charts.load('current',{packages: ['corechart']});
-            // google.charts.load("visualization", "1", {packages: ["corechart"]});
+            google.charts.load("visualization", "1", {packages: ["corechart"]});
             google.charts.setOnLoadCallback(drawChart);
         })();
     </script>
