@@ -14,7 +14,7 @@
 
   <body>
     <div class="text-center mb-2 mt-2">
-      <img src="img/logo.png" alt="ロゴ" width="350">
+      <img src="img/logo2.png" alt="ロゴ" width="350">
     </div>
 
     <div class="text-center mb-4 mt-4">
