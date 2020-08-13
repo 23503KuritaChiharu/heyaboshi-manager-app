@@ -17,7 +17,7 @@
       <img src="img/logo2.png" alt="ロゴ" width="350">
     </div>
 
-    <div class="text-center mb-4 mt-4">
+    <div class="text-center mb-3 mt-5">
       <h3>問題点</h3>
     </div>
 
