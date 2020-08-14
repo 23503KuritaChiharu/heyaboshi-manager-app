@@ -44,16 +44,19 @@
     <div id="ondo" class="tab-pane active">
       <?php
         include __DIR__. '/graph/ondo.php';
+        include __DIR__. '/graph/kin.php';
       ?>
     </div>
     <div id="situdo" class="tab-pane">
       <?php
         include __DIR__. '/graph/situdo.php';
+        // include __DIR__. '/graph/kin.php';
       ?>
     </div>
     <div id="water" class="tab-pane">
       <?php
         include __DIR__. '/graph/water.php';
+        // include __DIR__. '/graph/kin.php';
       ?>
     </div>
 
