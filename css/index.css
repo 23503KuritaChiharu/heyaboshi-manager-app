@@ -13,3 +13,7 @@ html, body {
     bottom: 0;
     width: 100%;
   }
+
+.alert-secondary{
+  background-color: #F7F6F8;
+}
