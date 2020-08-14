@@ -17,8 +17,10 @@ html, body {
 h3{
   color: #495057;
 }
+
 .alert-secondary{
-  background-color: #F7F6F8;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .alert-secondary .alert-link{
