@@ -27,7 +27,7 @@
                     width: 400,
                     height: 300,
                     hAxis: {title: '時間'},
-                    vAxis: {title: '湿度'},
+                    // vAxis: {title: '湿度'},
                     // curveType: 'function',
                     pointSize: 10,
                     pointShape: 'square',

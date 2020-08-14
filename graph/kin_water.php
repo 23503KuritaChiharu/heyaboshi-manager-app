@@ -27,7 +27,7 @@
                     width: 400,
                     height: 300,
                     hAxis: {title: '時間'},
-                    vAxis: {title: '菌の増殖しやすさ'},
+                    // vAxis: {title: '菌の増殖しやすさ'},
                     // curveType: 'function',
                     pointSize: 10,
                     pointShape: 'square',
