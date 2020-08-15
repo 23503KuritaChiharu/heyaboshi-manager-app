@@ -31,7 +31,6 @@
 <body>
  <script>
  function pushMe() {
- var userId = firebase.auth().currentUser.uid;
  return firebase.database().ref('/test').once('value').then(function(snapshot) {
  console.log(snapshot.val());
  });
