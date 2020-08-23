@@ -56,14 +56,12 @@
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
                 };
-                // firebaseのデータをチャートの形に整理する
-                datas.forEach(function(snapshot){
-                    var data = snapshot.val();
+                datas.forEach(data => {
                     console.log("time: " + data.time);
                     console.log("tempareture: " + data.tempareture);
                     console.log("humidity: " + data.humidity);
                     console.log("water_content: " + data.water_content);
-                })
+                });
                 
                 var chart = new google.visualization.LineChart(target);
                 data = new google.visualization.arrayToDataTable([
