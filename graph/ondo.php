@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
-    
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
     https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -32,7 +32,7 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     </script>
-
+    
   </head>
 
 <body>
@@ -42,7 +42,7 @@
         (function() {
             'use strict';
 
-            function drawChart() {
+            function drawChart(datas) {
                 var target = document.getElementById('target');
                 var data;
                 var options = {
@@ -56,27 +56,29 @@
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
                 };
-                return firebase.database().ref('/devices').chdir('test_device_1').once('value').then(function(snapshot) {
-                    console.log(snapshot.val());
-                    var chart = new google.visualization.LineChart(target);
-                    data = new google.visualization.arrayToDataTable([
-                        ['時間', '温度'],
-                        ['0', 0],
-                        ['1', 35],
-                        ['2', 28],
-                        ['3', 27],
-                        ['4', 23],
-                        ['5', 25],
-                    ]);
+                var chart = new google.visualization.LineChart(target);
+                data = new google.visualization.arrayToDataTable([
+                    ['時間', '温度'],
+                    ['0', 0],
+                    ['1', 35],
+                    ['2', 28],
+                    ['3', 27],
+                    ['4', 23],
+                    ['5', 25],
+                ]);
 
-                    chart.draw(data, options);
-                });
-
+                chart.draw(data, options);
             }
 
             google.charts.load('current',{packages: ['corechart']});
             google.charts.load("visualization", "1", {packages: ["corechart"]});
-            google.charts.setOnLoadCallback(drawChart);
+
+
+            firebase.database().ref('/devices').chdir('test_device_1').once('value').then(function(snapshot) {
+                datas = snapshot.val();
+                console.log(datas);
+                google.charts.setOnLoadCallback(drawChart(datas));
+            });
         })();
     </script>
 
