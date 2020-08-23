@@ -56,11 +56,11 @@
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
                 };
-                datas.forEach(data => {
-                    console.log("time: " + data.time);
-                    console.log("tempareture: " + data.tempareture);
-                    console.log("humidity: " + data.humidity);
-                    console.log("water_content: " + data.water_content);
+                datas.forEach(dataa => {
+                    console.log("time: " + dataa.time);
+                    console.log("tempareture: " + dataa.tempareture);
+                    console.log("humidity: " + dataa.humidity);
+                    console.log("water_content: " + dataa.water_content);
                 });
                 
                 var chart = new google.visualization.LineChart(target);
