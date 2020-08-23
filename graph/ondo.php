@@ -74,7 +74,7 @@
             google.charts.load("visualization", "1", {packages: ["corechart"]});
         })();
         
-        firebase.database().ref('/devices').chdir('test_device_1').once('value').then(function(snapshot) {
+        firebase.database().ref('/devices/test_device_1').once('value').then(function(snapshot) {
             datas = snapshot.val();
             console.log(datas);
             google.charts.setOnLoadCallback(drawChart(datas));
