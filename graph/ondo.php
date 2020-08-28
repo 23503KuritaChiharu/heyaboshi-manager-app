@@ -66,17 +66,15 @@
                     console.log("water_content: " + dataa.water_content);
                 }
                 
-                var chart = new google.visualization.LineChart(target);
-                data = new google.visualization.arrayToDataTable([
-                    ['時間', '温度'],
-                    ['0', 0],
-                    ['1', 35],
-                    ['2', 28],
-                    ['3', 27],
-                    ['4', 23],
-                    ['5', 25],
-                ]);
+                var valueArray = [['時間', '温度']];
+                for (var i = 0; i<datas.length; i++) {
+                    let dataa = datas[i];
+                    valueArray.push([dataa.time, dataa.tempareture]);
+                }
 
+                var chart = new google.visualization.LineChart(target);
+                data = new google.visualization.arrayToDataTable(valueAraay);
+                
                 chart.draw(data, options);
             }
 
