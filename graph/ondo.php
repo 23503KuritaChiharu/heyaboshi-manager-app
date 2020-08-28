@@ -64,7 +64,7 @@
                     console.log("tempareture: " + dataa.tempareture);
                     console.log("humidity: " + dataa.humidity);
                     console.log("water_content: " + dataa.water_content);
-                });
+                }
                 
                 var chart = new google.visualization.LineChart(target);
                 data = new google.visualization.arrayToDataTable([
