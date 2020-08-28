@@ -73,8 +73,8 @@
                 }
 
                 var chart = new google.visualization.LineChart(target);
-                data = new google.visualization.arrayToDataTable(valueAraay);
-                
+                data = new google.visualization.arrayToDataTable(valueArray);
+
                 chart.draw(data, options);
             }
 
