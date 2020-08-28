@@ -56,7 +56,10 @@
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
                 };
-                datas.forEach(dataa => {
+
+
+                for (var i = 0; i<datas.length; i++) {
+                    let dataa = datas[i];
                     console.log("time: " + dataa.time);
                     console.log("tempareture: " + dataa.tempareture);
                     console.log("humidity: " + dataa.humidity);
