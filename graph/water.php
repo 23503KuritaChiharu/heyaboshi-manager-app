@@ -9,49 +9,85 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyDwizDxSbdLAAFrOmm5v0gwyiVVBt8QKYk",
+    authDomain: "heyaboshi-manager.firebaseapp.com",
+    databaseURL: "https://heyaboshi-manager.firebaseio.com",
+    projectId: "heyaboshi-manager",
+    storageBucket: "heyaboshi-manager.appspot.com",
+    messagingSenderId: "767584081695",
+    appId: "1:767584081695:web:ff141bebf62fed516d822a",
+    measurementId: "G-W1K945Y27G"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
     
   </head>
 
 <body>
-    <div id="target3"></div>
+    <div id="target-water_content"></div>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
         (function() {
             'use strict';
 
-            function drawChart() {
-                var target3 = document.getElementById('target3');
+            function drawChart(datas) {
+                var target = document.getElementById('target-water_content');
                 var data;
                 var options = {
                     title: '含水量',
                     width: 400,
                     height: 300,
                     hAxis: {title: '時間'},
-                    vAxis: {title: '含水量'},
+                    // vAxis: {title: '含水量'},
                     // curveType: 'function',
                     pointSize: 10,
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
                 };
-                var chart = new google.visualization.LineChart(target3);
-                data = new google.visualization.arrayToDataTable([
-                    ['時間', '含水量'],
-                    ['0', 0],
-                    ['1', 90],
-                    ['2', 78],
-                    ['3', 50],
-                    ['4', 30],
-                    ['5', 10],
-                ]);
+
+
+                // for (var i = 0; i<datas.length; i++) {
+                //     let dataa = datas[i];
+                //     console.log("time: " + dataa.time);
+                //     console.log("water_content: " + dataa.water_content);
+                //     console.log("water_content: " + dataa.water_content);
+                //     console.log("water_content: " + dataa.water_content);
+                // }
+                
+                var valueArray = [['時間', '含水量']];
+                for (var i = 0; i<datas.length; i++) {
+                    let dataa = datas[i];
+                    valueArray.push([dataa.time, dataa.water_content]);
+                }
+
+                var chart = new google.visualization.LineChart(target);
+                data = new google.visualization.arrayToDataTable(valueArray);
 
                 chart.draw(data, options);
             }
 
             google.charts.load('current',{packages: ['corechart']});
             google.charts.load("visualization", "1", {packages: ["corechart"]});
-            google.charts.setOnLoadCallback(drawChart);
+
+            firebase.database().ref('/devices/test_device_1').once('value').then(function(snapshot) {
+                let datas = snapshot.val();
+                console.log(datas);
+                google.charts.setOnLoadCallback(drawChart(datas));
+        });
         })();
+        
     </script>
 </body>
-
 </html>
