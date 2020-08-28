@@ -58,13 +58,13 @@
                 };
 
 
-                for (var i = 0; i<datas.length; i++) {
-                    let dataa = datas[i];
-                    console.log("time: " + dataa.time);
-                    console.log("tempareture: " + dataa.tempareture);
-                    console.log("humidity: " + dataa.humidity);
-                    console.log("water_content: " + dataa.water_content);
-                }
+                // for (var i = 0; i<datas.length; i++) {
+                //     let dataa = datas[i];
+                //     console.log("time: " + dataa.time);
+                //     console.log("tempareture: " + dataa.tempareture);
+                //     console.log("humidity: " + dataa.humidity);
+                //     console.log("water_content: " + dataa.water_content);
+                // }
                 
                 var valueArray = [['時間', '温度']];
                 for (var i = 0; i<datas.length; i++) {
