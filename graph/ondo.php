@@ -84,8 +84,7 @@
         firebase.database().ref('/devices/test_device_1').once('value').then(function(snapshot) {
             datas = snapshot.val();
             console.log(datas);
-            drawChart(datas);
-            // google.charts.setOnLoadCallback(drawChart(datas));
+            google.charts.setOnLoadCallback(function() { drawChart(datas); });
         });
     </script>
 
