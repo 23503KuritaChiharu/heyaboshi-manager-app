@@ -69,7 +69,7 @@
                 var valueArray = [['時間', '温度']];
                 for (var i = 0; i<datas.length; i++) {
                     let dataa = datas[i];
-                    valueArray.push([dataa.time, dataa.tempareture]);
+                    valueArray.push([dataa.time, dataa.temperature]);
                 }
 
                 var chart = new google.visualization.LineChart(target);
