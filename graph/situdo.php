@@ -52,7 +52,7 @@
                     hAxis: {title: '時間'},
                     // vAxis: {title: '湿度'},
                     // curveType: 'function',
-                    pointSize: 10,
+                    pointSize: 4,
                     pointShape: 'square',
                     chartArea: {width:'50%',height:'80%'}
                 };
