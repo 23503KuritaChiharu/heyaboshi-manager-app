@@ -35,7 +35,7 @@
       <a href="#situdo" class="nav-link" data-toggle="tab">湿度</a>
     </li>
     <li class="nav-item">
-      <a href="#water" class="nav-link" data-toggle="tab">含水量</a>
+      <a href="#water" class="nav-link" data-toggle="tab">乾き具合</a>
     </li>
   </ul>
 
@@ -45,21 +45,21 @@
       <?php
         include __DIR__. '/graph/ondo.php';
         // include __DIR__. '/graph/kin.php';
-        include __DIR__. '/graph/kin_ondo.php';       
+        //include __DIR__. '/graph/kin_ondo.php';       
       ?>
     </div>
     <div id="situdo" class="tab-pane">
       <?php
         include __DIR__. '/graph/situdo.php';
         // include __DIR__. '/graph/kin.php';
-        include __DIR__. '/graph/kin_situdo.php';       
+        //include __DIR__. '/graph/kin_situdo.php';       
       ?>
     </div>
     <div id="water" class="tab-pane">
       <?php
         include __DIR__. '/graph/water.php';
         // include __DIR__. '/graph/kin.php';
-        include __DIR__. '/graph/kin_water.php';       
+        //include __DIR__. '/graph/kin_water.php';       
       ?>
     </div>
 

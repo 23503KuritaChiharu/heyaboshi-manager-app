@@ -46,11 +46,11 @@
                 var target = document.getElementById('target-water_content');
                 var data;
                 var options = {
-                    title: '含水量',
+                    title: '乾き具合',
                     width: 400,
                     height: 300,
                     hAxis: {title: '時間'},
-                    // vAxis: {title: '含水量'},
+                    // vAxis: {title: '乾き具合'},
                     // curveType: 'function',
                     pointSize: 4,
                     pointShape: 'square',
@@ -66,7 +66,7 @@
                 //     console.log("water_content: " + dataa.water_content);
                 // }
                 
-                var valueArray = [['時間', '含水量']];
+                var valueArray = [['時間', '乾き具合']];
                 for (var i = 0; i<datas.length; i++) {
                     let dataa = datas[i];
                     valueArray.push([dataa.time, dataa.water_content]);
