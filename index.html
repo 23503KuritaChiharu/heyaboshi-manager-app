@@ -1,43 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Document</title>
- <!-- The core Firebase JS SDK is always required and must be listed first -->
- <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
- <!-- TODO: Add SDKs for Firebase products that you want to use
- https://firebase.google.com/docs/web/setup#available-libraries -->
- <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
- <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
- <script>
- // Your web app's Firebase configuration
- var firebaseConfig = {
- apiKey: "AIzaSyDwizDxSbdLAAFrOmm5v0gwyiVVBt8QKYk",
- authDomain: "heyaboshi-manager.firebaseapp.com",
- databaseURL: "https://heyaboshi-manager.firebaseio.com",
- projectId: "heyaboshi-manager",
- storageBucket: "heyaboshi-manager.appspot.com",
- messagingSenderId: "767584081695",
- appId: "1:767584081695:web:ff141bebf62fed516d822a",
- measurementId: "G-W1K945Y27G"
- };
- // Initialize Firebase
- firebase.initializeApp(firebaseConfig);
- firebase.analytics();
- </script>
- 
-</head>
-<body>
- <script>
- function pushMe() {
- return firebase.database().ref('/test').once('value').then(function(snapshot) {
- console.log(snapshot.val());
- });
- }
- </script>
- 
- <button onclick="pushMe()">pushMe</button>
- 
-</body>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>部屋干しマネージャー</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/graph_page.css?<?php echo date('Ymd-His'); ?>">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyDwizDxSbdLAAFrOmm5v0gwyiVVBt8QKYk",
+    authDomain: "heyaboshi-manager.firebaseapp.com",
+    databaseURL: "https://heyaboshi-manager.firebaseio.com",
+    projectId: "heyaboshi-manager",
+    storageBucket: "heyaboshi-manager.appspot.com",
+    messagingSenderId: "767584081695",
+    appId: "1:767584081695:web:ff141bebf62fed516d822a",
+    measurementId: "G-W1K945Y27G"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+  </head>
+
+  <body>
+    <div id="div0" class="alert alert-secondary text-center" role="alert">
+      <a id="inyou0" href="advice.php" class="alert-link"></a>
+    </div>
+
+    <div class="text-center mb-2 mt-2">
+      <img src="img/logo2.png" alt="ロゴ" width="350">
+    </div>
+
+    <div class="text-center mb-3 mt-5">
+      <h3>問題点</h3>
+    </div>
+
+    <div class="alert alert-secondary text-center" role="alert">
+      <a href="advice.php" class="alert-link">菌が増殖しやすくなっています</a>
+    </div>
+    
+    <div class="alert alert-secondary text-center" role="alert">
+      <a href="#" class="alert-link">湿度が高くなっています</a>
+    </div>
+
+    <div id="graph-btn" class="text-center list-group">
+      <a href="graph_page.php" class="list-group-item list-group-item-action">グラフを見る &raquo;</a>
+    </div>
+    
+    
+    <div id="target"></div>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+       'use strict';
+
+      //温度が高くなっています
+      function Bigtempreature(ondodata,timedata){
+        var count = 0;
+        var i = 0;
+        var j = 0;
+        var num = 0;
+        for (var i; i<ondodata.length; i++){
+          if(ondodata[i] >= 25){
+            j = i + 1;
+              while(ondodata[j] >= 25){
+                j++;
+                count++;
+            }
+              if(count == 0){
+                console.log(timedata[i] + "の温度が高くなっています");
+              }
+              else if(count >= 1){
+                num = j-1;
+                console.log(timedata[i] + "～" + timedata[num] + "の温度が高くなっています");
+                ondodata.splice(i,count);
+                timedata.splice(i,count);
+              }
+            }
+          }
+        }
+      //温度が低くなっています
+      function Smalltempreature(ondodata,timedata){
+        var count = 0;
+        var i = 0;
+        var j = 0;
+        var num = 0;
+        for (var i; i<ondodata.length; i++){
+          if(ondodata[i] <= 15){
+            j = i + 1;
+              while(ondodata[j] <= 15){
+                j++;
+                count++;
+            }
+              if(count == 0){
+                console.log(timedata[i] + "の温度が低くなっています");
+              }
+              else if(count >= 1){
+                num = j-1;
+                console.log(timedata[i] + "～" + timedata[num] + "の温度が低くなっています");
+                ondodata.splice(i,count);
+                timedata.splice(i,count);
+              }
+            }
+          }
+        }
+
+      //湿度が高くなっています
+      function Bighumidity(situdodata,timedata){
+        var count = 0;
+        var i = 0;
+        var j = 0;
+        var num = 0;
+        for (var i; i<situdodata.length; i++){
+          if(situdodata[i] >= 60){
+            j = i + 1;
+              while(situdodata[j] >= 60){
+                j++;
+                count++;
+            }
+              if(count == 0){
+                console.log(timedata[i] + "の湿度が高くなっています");
+              }
+              else if(count >= 1){
+                num = j-1;
+                console.log(timedata[i] + "～" + timedata[num] + "の湿度が高くなっています");
+                situdodata.splice(i,count);
+                timedata.splice(i,count);
+              }
+            }
+          }
+        }
+      
+      //湿度が低くなっています
+      function Smallhumidity(situdodata,timedata){
+        var count = 0;
+        var i = 0;
+        var j = 0;
+        var num = 0;
+        for (var i; i<situdodata.length; i++){
+          if(situdodata[i] <= 10){
+            j = i + 1;
+              while(situdodata[j] <= 10){
+                j++;
+                count++;
+            }
+              if(count == 0){
+                console.log(timedata[i] + "の湿度が低くなっています");
+              }
+              else if(count >= 1){
+                num = j-1;
+                console.log(timedata[i] + "～" + timedata[num] + "の湿度が低くなっています");
+                situdodata.splice(i,count);
+                timedata.splice(i,count);
+              }
+            }
+          }
+        }
+
+      
+        (function() {
+
+            function drawChart(datas) {
+                var target = document.getElementById('target');
+                var data;
+                
+                var valueArray = [['時間', '温度', '湿度', '乾き具合']];
+                var valueTime = [];
+                var valueTemperature = [];
+                var valueHumid = [];
+                var valueWater = [];
+                for (var i = 0; i<datas.length; i++) {
+                    let dataa = datas[i];
+                    valueArray.push([dataa.time, dataa.temperature, dataa.humidity, dataa.water_content]);
+                    valueTime.push(dataa.time);
+                    valueTemperature.push(dataa.temperature);
+                    valueHumid.push(dataa.humidity);
+                    valueWater.push(dataa.water_content);
+                }
+
+                Bigtempreature(valueTemperature,valueTime);
+                Smalltempreature(valueTemperature,valueTime);
+                Bighumidity(valueHumid,valueTime);
+                Smallhumidity(valueHumid,valueTime);
+                console.log(valueTime);
+                console.log(valueTemperature);
+                console.log(valueHumid);
+                console.log(valueWater);
+
+                var chart = new google.visualization.LineChart(target);
+                data = new google.visualization.arrayToDataTable(valueArray);
+
+                chart.draw(data, options);
+            }
+
+            google.charts.load('current',{packages: ['corechart']});
+            google.charts.load("visualization", "1", {packages: ["corechart"]});
+
+            firebase.database().ref('/devices/test_device_1').once('value').then(function(snapshot) {
+                let datas = snapshot.val();
+                console.log(datas);
+                google.charts.setOnLoadCallback(drawChart(datas));
+        });
+      })();
+
+     
+
+
+    
+        
+    </script>
+  </body>
 </html>
